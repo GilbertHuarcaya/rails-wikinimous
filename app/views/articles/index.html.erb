@@ -1,13 +1,8 @@
-<%= render "nav" %>
-<div class="container">
-<div class="row justify-content-center">
-  <div class="col-sm-8">
-    <% @articles.each do |article| %>
-      <article>
+<%= render "layout" do %>
+  <% @articles.each do |article| %>
+    <article>
       <h2> <%= link_to article.title, article_path(article.id) %> </h2>
       <%= article.content %>
-      </article>
-    <% end %>
-  </div>
-</div>
-<div class="row">
+    </article>
+  <% end %>
+<% end %>

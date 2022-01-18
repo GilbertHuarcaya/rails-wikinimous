@@ -1,4 +1,9 @@
-<%= render "nav" %>
-<h2><%= @article.title %></h2><%= link_to "Edit", edit_article_path(@article.id) %><%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %></li>
-<p><%= @article.content %></p>
-<%= link_to "Back to list", articles_path %>
+<%= render "layout" do %>
+  <h2>
+    <%= @article.title %>
+    <%= link_to "Edit", edit_article_path(@article.id) %>
+    <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+  </h2>
+  <p><%= @article.content %></p>
+  <%= link_to "Back to list", articles_path %>
+<% end %>
